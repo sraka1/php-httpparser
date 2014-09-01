@@ -61,7 +61,7 @@ int on_url_cb(http_parser *p, const char *at, size_t len)
 	
 	http_parser_parse_url(at, len, 0, &result->handle);
 	
-	add_assoc_stringl(data, "QUERY_STRING", (char*)at, len, 1);
+	add_assoc_stringl(data, "query_string", (char*)at, len, 1);
 
 	PHP_HTTP_PARSER_PARSE_URL(UF_SCHEMA, scheme);
 	PHP_HTTP_PARSER_PARSE_URL(UF_HOST, host);
@@ -185,7 +185,7 @@ PHP_FUNCTION(http_parser_execute)
 	http_parser_execute(&context->parser, &context->settings, body, body_len);
 	
 	if (context->is_response == 0) {
-		add_assoc_string(result, "REQUEST_METHOD", (char*)http_method_str(context->parser.method), 1);
+		add_assoc_string(result, "request_method", (char*)http_method_str(context->parser.method), 1);
 	} else {
 		add_assoc_long(result, "status_code", (long)context->parser.status_code);
 	}
