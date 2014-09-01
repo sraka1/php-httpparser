@@ -1,3 +1,3 @@
 [submodule "http-parser"]
 	path = http-parser
-	url = git@github.com:sraka1/http-parser.git
+	url = https://github.com/sraka1/http-parser
