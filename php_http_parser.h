@@ -3,7 +3,7 @@
 #define PHP_HTTPPARSER_H
 
 #define PHP_HTTPPARSER_EXTNAME "httpparser"
-#define PHP_HTTPPARSER_EXTVER "0.1"
+#define PHP_HTTPPARSER_EXTVER "0.1.1"
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"

@@ -126,7 +126,7 @@ ZEND_BEGIN_ARG_INFO_EX(arginfo_http_parser_execute, 0, 0, 3)
 	ZEND_ARG_INFO(0, setting)
 ZEND_END_ARG_INFO()
 
-PHP_FUNCTION(http_parser_init)
+PHP_FUNCTION(dbox_parser_init)
 {
 	long target = HTTP_REQUEST;
 	php_http_parser_context *ctx;
@@ -160,7 +160,7 @@ PHP_FUNCTION(http_parser_init)
 	ZEND_REGISTER_RESOURCE(return_value, ctx, httpparser_resource_handle);
 }
 
-PHP_FUNCTION(http_parser_execute)
+PHP_FUNCTION(dbox_parser_execute)
 {
 	zval *z_parser,*result, *headers;
 	php_http_parser_context *context;
@@ -198,15 +198,15 @@ PHP_FUNCTION(http_parser_execute)
 }
 
 static zend_function_entry httpparser_functions[] = {
-	PHP_FE(http_parser_init,    arginfo_http_parser_init)
-	PHP_FE(http_parser_execute, arginfo_http_parser_init)
+	PHP_FE(dbox_parser_init,    arginfo_http_parser_init)
+	PHP_FE(dbox_parser_execute, arginfo_http_parser_init)
 	{NULL, NULL, NULL}
 };
 
 
 PHP_MINFO_FUNCTION(httpparser)
 {
-	php_printf("PHP httpparser Extension\n");
+	php_printf("PHP dboxparser extension\n");
 }
 
 zend_module_entry httpparser_module_entry = {
