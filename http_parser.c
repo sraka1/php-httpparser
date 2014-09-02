@@ -97,9 +97,9 @@ int header_value_cb(http_parser *p, const char *at, size_t len)
 int on_body_cb(http_parser *p, const char *at, size_t len)
 {
 	php_http_parser_context *result = p->data;
-	zval *data = result->headers;
+	zval *data = result->data;
 	
-	add_assoc_stringl(data, "body", (char*)at, len,  1);
+	add_assoc_stringl(data, "body", (char*)at, len, 1);
 
 	return 0;
 }
