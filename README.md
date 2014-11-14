@@ -18,7 +18,7 @@ extension=php_httpparser.so
 manually.
 
 
-## Usage:
+## Usage
 ````
 <?php
 $parser = http_parser_init();
