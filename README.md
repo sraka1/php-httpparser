@@ -4,8 +4,8 @@
 
 ## Installation
 ```
-bash
 $ git clone --recursive git@github.com:sraka1/php-httpparser.git
+$ cd php-httpparser
 $ phpize
 $ ./configure
 $ make
