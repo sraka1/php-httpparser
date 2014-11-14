@@ -1,8 +1,24 @@
-# Joyent's http parser binding for php
+# DTBX parser binding for php
 
 [![Build Status](https://secure.travis-ci.org/chobie/php-httpparser.png)](http://travis-ci.org/chobie/php-httpparser)
 
+## Installation
+```
+bash
+$ git clone --recursive git@github.com:sraka1/php-httpparser.git
+$ phpize
+$ ./configure
+$ make
+$ make install
+```
+In case make install doesn't find your php.ini directory, you'll have to add
+```
+extension=php_httpparser.so
+````
+manually.
 
+
+## Usage:
 ````
 <?php
 $parser = http_parser_init();
@@ -66,9 +82,10 @@ $target should be HTTP_REQUEST or HTTP_RESPONSE.
 ### bool http_parser_execute(resource $resource, string $request, array &$result)
 
 
-# Author
+# Authors
 
 Shuhei Tanuma
+Jakob Murko
 
 # License
 
